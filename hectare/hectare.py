@@ -71,7 +71,7 @@ def gen_c_header(in_filename, out_filename):
     out_file.close()
 
 
-def main():
+def main(args=None):
     parser = argparse.ArgumentParser(
         description="HECTARE - Hamburg Elegant CreaTor from Accelera systemrdl to REgisters"
     )
@@ -93,7 +93,7 @@ def main():
     parser.add_argument(
         "--c-header", nargs=1, dest="c_header", type=str, help="generate C header",
     )
-    args = parser.parse_args()
+    args = parser.parse_args(args)
 
     if args.debug:
         logging.basicConfig(level=logging.DEBUG)
